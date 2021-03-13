@@ -40,7 +40,8 @@ def test_add_empty_reponse_body(client):
         "id": 4446,
 		"lucky_numbers": [12,34,33,45,32,12]
 	})
-    assert response.data != b""
+    assert response.data == b"" # b"" : representa a un objeto vacio
+    #assert len(response.data) == 0 (esto igual representa un objeto vacio)
 
 @pytest.mark.it("Implement method GET /members")
 def test_get_members_exist(client):
